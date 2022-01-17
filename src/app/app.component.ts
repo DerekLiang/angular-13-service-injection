@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { API_BASE_URL } from './../environments/token-def';
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng13';
+  baseUrl = '';
+
+  constructor( @Inject(API_BASE_URL) baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
 }
